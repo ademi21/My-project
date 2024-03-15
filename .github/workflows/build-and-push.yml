@@ -1,6 +1,6 @@
 name: Build and Push image to ECR
 on:
-  pull_request:
+  push:
     branches: 
       - main
   workflow_dispatch:
