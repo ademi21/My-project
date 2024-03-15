@@ -1,7 +1,8 @@
 name: Build and Push image
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      'main'
   workflow_dispatch:
 
 jobs:
@@ -23,10 +24,10 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Build image
-      run: docker build -t image:latest .
+      run: docker build -t ademimage:latest .
     
     - name: Tag image
-      run: docker tag image:latest 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
+      run: docker tag ademimage:latest 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
         
     - name: Push image
       run: docker push 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
