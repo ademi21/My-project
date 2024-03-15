@@ -8,7 +8,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Configure AWS credentials
@@ -23,10 +23,10 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Build image
-      run: docker build -t task .
+      run: docker build -t image:latest .
     
     - name: Tag image
-      run: docker tag adem-image:latest 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
+      run: docker tag image:latest 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
         
     - name: Push image
       run: docker push 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
