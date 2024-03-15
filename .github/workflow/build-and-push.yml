@@ -24,7 +24,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Build image
-      run:docker build -t adem-image:latest .
+      run: docker build -t task .
     
     - name: Tag image
       run: docker tag adem-image:latest 739997231570.dkr.ecr.us-east-2.amazonaws.com/task:latest
