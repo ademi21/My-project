@@ -5,7 +5,7 @@ variable "service_account_id" {
 
 variable "service_account_display_id" {
     type = string 
-    default = "service-account"  
+    default = "Service Account"  
 }
 
 

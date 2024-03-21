@@ -1,5 +1,5 @@
 provider "google" {
-  project = var.project.id #"massive-clone-417822"
-  region  = var.provider_location#"us-central1"
+  project = var.project.id 
+  region  = var.provider_location
 }
 
